@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Affairs - Fresh Handcrafted Chai Every Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="\images\Logo.png" alt="Chai Affairs Logo" class="logo-image" onerror="this.style.display='none'; this.parentElement.querySelector('.logo-fallback').style.display='flex';">
+                    <div class="logo-fallback">
+                        <span class="logo-text">Chai Affairs</span>
+                    </div>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Fresh Handcrafted Chai Every Day</h1>
+                <p class="hero-subtitle">Made with real ingredients and served with warmth.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">View Menu</a>
+                    <a href="#contact" class="btn btn-secondary">Order Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="\images\chai.png" alt="Chai Cup" class="chai-cup-image">
+            <div class="chai-cup"></div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">Welcome to Chai Affairs, where every cup tells a story of tradition, warmth, and authentic flavors.</p>
+                    <p>Nestled in the heart of North India, we take pride in serving handcrafted chai made with the finest ingredients. Our journey began with a simple belief: that a perfect cup of chai can bring people together and create moments of joy.</p>
+                    <p>What makes our chai unique? We use fresh ginger, aromatic masala spices, fragrant elaichi (cardamom), and premium tea leaves. Each cup is brewed to perfection, ensuring that rich, comforting flavor that reminds you of home.</p>
+                    <p>Whether you prefer the classic Masala Chai, the earthy Kulhad Chai served in traditional clay cups, or our special Ginger and Elaichi blends, we have something to warm your heart and soul.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Fresh Ingredients</h3>
+                        <p>Only the finest, freshest ingredients in every cup</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Made with Love</h3>
+                        <p>Every cup is handcrafted with care and passion</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Authentic Taste</h3>
+                        <p>Traditional recipes passed down through generations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <p class="section-subtitle">Discover our range of handcrafted chai and delicious snacks</p>
+            
+            <div class="menu-category">
+                <h3 class="category-title">
+                    <i class="fas fa-coffee"></i>
+                    Hot Chai
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images\Masala chai.png" alt="Masala Chai" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Masala Chai</h4>
+                            <p>Aromatic blend of spices with ginger, cardamom, and cinnamon</p>
+                            <span class="price">₹25</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images\ChatGPT Image Nov 16, 2025, 12_36_41 PM.png" alt="Kulhad Chai" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Kulhad Chai</h4>
+                            <p>Traditional chai served in earthy clay cups for authentic flavor</p>
+                            <span class="price">₹30</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images\Ginger chaai.png" alt="Ginger Chai" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Ginger Chai</h4>
+                            <p>Strong and spicy with fresh ginger for that extra kick</p>
+                            <span class="price">₹25</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images\Elachi chai.png" alt="Elaichi Chai" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Elaichi Chai</h4>
+                            <p>Fragrant cardamom-infused chai, smooth and aromatic</p>
+                            <span class="price">₹25</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images\Chocolate Chai.png" alt="Chocolate Chai" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Chocolate Chai</h4>
+                            <p>Indulgent blend of rich chocolate with traditional chai</p>
+                            <span class="price">₹35</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title">
+                    <i class="fas fa-glass-water"></i>
+                    Cold Beverages
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images\Cold tea.png" alt="Cold Tea" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-glass-water"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Cold Tea</h4>
+                            <p>Refreshing iced tea perfect for hot days</p>
+                            <span class="price">₹30</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="\images\Iced tea.png" alt="Iced Tea" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-glass-water"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Iced Tea</h4>
+                            <p>Chilled tea with lemon and mint</p>
+                            <span class="price">₹30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="category-title">
+                    <i class="fas fa-utensils"></i>
+                    Snacks
+                </h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images\Biscuits.png" alt="Biscuits" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-cookie"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Biscuits</h4>
+                            <p>Fresh, crispy biscuits to pair with your chai</p>
+                            <span class="price">₹15</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="\images\Bun Maska.png" alt="Bun Maska" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-bread-slice"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Bun Maska</h4>
+                            <p>Soft bun with butter, a classic chai companion</p>
+                            <span class="price">₹30</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="\images\Maggi.png" alt="Maggi" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-bowl-food"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Maggi</h4>
+                            <p>Hot and spicy instant noodles, a favorite snack</p>
+                            <span class="price">₹40</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="\images\Sandwiches.png" alt="Sandwiches" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.menu-item-fallback').style.display='flex';">
+                            <div class="menu-item-fallback">
+                                <i class="fas fa-sandwich"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h4>Sandwiches</h4>
+                            <p>Fresh sandwiches with your choice of fillings</p>
+                            <span class="price">₹50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <p class="section-subtitle">A glimpse into our cozy space and delicious offerings</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="\images\Snacks.png" alt="Steaming glass of chai with biscuits and spices" class="gallery-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.gallery-fallback').style.display='flex';">
+                    <div class="gallery-fallback">
+                        <i class="fas fa-mug-hot"></i>
+                        <p>Fresh Chai & Snacks</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <p>Fresh Chai & Snacks</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="\images\Traditional Kulhad Chai.png" alt="Collection of kulhad chai with teapots and spices" class="gallery-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.gallery-fallback').style.display='flex';">
+                    <div class="gallery-fallback">
+                        <i class="fas fa-mug-hot"></i>
+                        <p>Traditional Kulhad Chai</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <p>Traditional Kulhad Chai</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="\images\Authentic Spices.png" alt="Chai mug with spices and biscuits on burlap" class="gallery-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.gallery-fallback').style.display='flex';">
+                    <div class="gallery-fallback">
+                        <i class="fas fa-leaf"></i>
+                        <p>Authentic Spices</p>
+                    </div>
+                    <div class="gallery-overlay">
+                        <p>Authentic Spices</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="\images\Masala chai.png" alt="Chai mug with spices and biscuits on burlap" class="gallery-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.gallery-fallback').style.display='flex';">
+                        <i class="fas fa-mug-hot"></i>
+                        <p>Masala Chai</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="\images\Snacks.png" alt="Chai mug with spices and biscuits on burlap" class="gallery-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.gallery-fallback').style.display='flex';">
+
+                        <i class="fas fa-utensils"></i>
+                        <p>Snacks</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <img src="\images\Our Ambience.png" alt="Chai mug with spices and biscuits on burlap" class="gallery-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.querySelector('.gallery-fallback').style.display='flex';">
+                        <i class="fas fa-store"></i>
+                        <p>Our Ambience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Real experiences from our chai lovers</p>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The best masala chai I've ever had! The spices are perfectly balanced, and the warmth of the kulhad adds to the experience. A must-visit for chai lovers!"</p>
+                    <div class="review-author">
+                        <strong>Rahul Sharma</strong>
+                        <span>Regular Customer</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Chai Affairs has become my go-to place. The ginger chai is absolutely amazing, and the bun maska is the perfect pairing. Great service and cozy atmosphere!"</p>
+                    <div class="review-author">
+                        <strong>Priya Patel</strong>
+                        <span>Local Resident</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Authentic taste, friendly staff, and reasonable prices. The elaichi chai is my favorite! Highly recommend this place to everyone."</p>
+                    <div class="review-author">
+                        <strong>Amit Kumar</strong>
+                        <span>Chai Enthusiast</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Love the ambience and the variety of chai options. The chocolate chai is a delightful surprise! Perfect spot for evening chai sessions with friends."</p>
+                    <div class="review-author">
+                        <strong>Neha Singh</strong>
+                        <span>Frequent Visitor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Visit us or get in touch - we'd love to hear from you!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>North India</p>
+                            <a href="https://maps.google.com" target="_blank" class="map-link">View on Google Maps</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+918736477462">+91 8736477462</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@chaiaffairs.com">info@chaiaffairs.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Opening Hours</h3>
+                            <p>Monday - Sunday: 7:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="whatsapp-button">
+                        <a href="https://wa.me/918736477462" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Google Maps Integration</p>
+                        <small>Embed your Google Maps iframe here</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot (Basic Structure) -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>Chai Affairs Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chatbot-message bot-message">
+                    <p>Hello! 👋 Welcome to Chai Affairs! How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Chai Affairs Logo" class="logo-image footer-logo-image" onerror="this.style.display='none'; this.parentElement.querySelector('.logo-fallback').style.display='flex';">
+                        <div class="logo-fallback">
+                            <span class="logo-text">Chai Affairs</span>
+                        </div>
+                    </div>
+                    <p>Fresh handcrafted chai made with love and authentic ingredients. Experience the warmth of traditional Indian chai culture.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/918736477462" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 8736477462</p>
+                    <p><i class="fas fa-envelope"></i> info@chaiaffairs.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> North India</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Chai Affairs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
