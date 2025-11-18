@@ -166,3 +166,27 @@ document.querySelectorAll('.menu-item, .gallery-item, .review-card, .feature-car
     observer.observe(el);
 });
 
+// FAQ accordion
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.closest('.faq-item');
+        const expanded = question.getAttribute('aria-expanded') === 'true';
+
+        // close all items
+        document.querySelectorAll('.faq-item').forEach(faqItem => {
+            if (faqItem !== item) {
+                faqItem.classList.remove('active');
+                const btn = faqItem.querySelector('.faq-question');
+                if (btn) {
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        item.classList.toggle('active', !expanded);
+        question.setAttribute('aria-expanded', String(!expanded));
+    });
+});
+
