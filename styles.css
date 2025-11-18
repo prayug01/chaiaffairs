@@ -801,8 +801,8 @@ section {
 }
 
 .chatbot-toggle {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     background: var(--accent-blue);
     border-radius: 50%;
     display: flex;
@@ -818,13 +818,13 @@ section {
 }
 
 .chatbot-toggle i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--white);
 }
 
 .chatbot-window {
     position: absolute;
-    bottom: 80px;
+    bottom: 70px;
     right: 0;
     width: 350px;
     height: 500px;
