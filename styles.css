@@ -812,8 +812,8 @@ section {
     background: var(--accent-blue);
     border-radius: 50%;
     display: flex;
-    align-items: Fit-content;
-    justify-content: Fit-content;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s;
