@@ -762,34 +762,40 @@ section {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow);
+    position: relative;
 }
 
-.map-placeholder {
-    background: var(--sky-blue);
-    padding: 4rem 2rem;
-    text-align: center;
+.map-image {
+    position: relative;
+}
+
+.map-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     min-height: 400px;
+}
+
+.map-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.65), rgba(30, 64, 175, 0.25));
+    color: var(--white);
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-blue);
+    align-items: flex-end;
+    padding: 2rem;
 }
 
-.map-placeholder i {
-    font-size: 4rem;
-    color: var(--accent-blue);
-    margin-bottom: 1rem;
+.map-overlay h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
 }
 
-.map-placeholder p {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.map-placeholder small {
-    color: var(--text-light);
+.map-overlay p {
+    margin: 0 0 1rem 0;
+    color: var(--white);
+    font-weight: 500;
 }
 
 /* Chatbot */
@@ -806,8 +812,8 @@ section {
     background: var(--accent-blue);
     border-radius: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: Fit-content;
+    justify-content: Fit-content;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s;
