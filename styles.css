@@ -27,6 +27,14 @@ body {
     overflow-x: hidden;
 }
 
+/* Global Image Optimization */
+img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -40,7 +48,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
 }
 
 .nav-wrapper {
@@ -59,11 +67,14 @@ body {
 }
 
 .logo-image {
-    height: 60px;
+    height: 140px;
     width: auto;
+    max-width: 400px;
     object-fit: contain;
     flex-shrink: 0;
     display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .logo-fallback {
@@ -388,7 +399,9 @@ section {
 
 .menu-item-image {
     background: linear-gradient(135deg, var(--accent-blue), var(--light-accent));
-    min-height: 150px;
+    min-height: 100px;
+    max-height: 100px;
+    height: 100px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -399,12 +412,18 @@ section {
 .menu-item-image img {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     transition: transform 0.3s;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .menu-item:hover .menu-item-image img {
@@ -461,8 +480,8 @@ section {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
 .gallery-item {
@@ -482,12 +501,15 @@ section {
 .gallery-image {
     width: 100%;
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.3s;
     position: absolute;
     top: 0;
     left: 0;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .gallery-item:hover .gallery-image {
@@ -773,8 +795,12 @@ section {
     display: block;
     width: 100%;
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
-    min-height: 400px;
+    min-height: 300px;
+    max-height: 400px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .map-overlay {
@@ -953,11 +979,14 @@ section {
 }
 
 .footer-logo .logo-image {
-    height: 60px;
+    height: 140px;
     width: auto;
+    max-width: 400px;
     object-fit: contain;
     flex-shrink: 0;
     display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .footer-logo .logo-fallback {
