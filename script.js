@@ -1,4 +1,4 @@
-// Mobile Navigation Toggle
+// Navigation toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 
@@ -7,21 +7,18 @@ if (hamburger && navMenu) {
         navMenu.classList.toggle('active');
     });
 
-    // Close menu when clicking on a link
     document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
+        link.addEventListener('click', () => navMenu.classList.remove('active'));
     });
 }
 
-// Smooth Scrolling for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
+// Smooth scroll for internal anchors
+document.querySelectorAll("a[href^='#']").forEach(anchor => {
+    anchor.addEventListener('click', event => {
+        const targetId = anchor.getAttribute('href');
+        if (targetId.length > 1) {
+            event.preventDefault();
+            document.querySelector(targetId)?.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -29,7 +26,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Chatbot Functionality
+// FAQ accordion
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question?.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        faqItems.forEach(other => {
+            other.classList.remove('active');
+            other.querySelector('.faq-question')?.setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+        }
+    });
+});
+
+// Intersection observer for subtle reveal
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.menu-card, .gallery figure, .review-card, .automation-grid article, .solutions-list li').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+});
+
+// Chatbot
 const chatbotToggle = document.getElementById('chatbotToggle');
 const chatbotWindow = document.getElementById('chatbotWindow');
 const chatbotClose = document.getElementById('chatbotClose');
@@ -37,156 +67,63 @@ const chatbotInput = document.getElementById('chatbotInput');
 const chatbotSend = document.getElementById('chatbotSend');
 const chatbotMessages = document.getElementById('chatbotMessages');
 
-// Chatbot responses
 const chatbotResponses = {
-    'flavours': 'We have a variety of chai flavours including Masala Chai, Kulhad Chai, Ginger Chai, Elaichi Chai, and Chocolate Chai. We also serve Cold Tea and Iced Tea!',
-    'flavor': 'We have a variety of chai flavours including Masala Chai, Kulhad Chai, Ginger Chai, Elaichi Chai, and Chocolate Chai. We also serve Cold Tea and Iced Tea!',
-    'deliver': 'Yes, we do deliver! You can place an order through WhatsApp or call us at +91 8736477462. We also offer takeaway options.',
-    'delivery': 'Yes, we do deliver! You can place an order through WhatsApp or call us at +91 8736477462. We also offer takeaway options.',
-    'menu': 'Our menu includes various chai options (Masala, Kulhad, Ginger, Elaichi, Chocolate) starting from ₹25, Cold Tea (₹30), and snacks like Biscuits (₹15), Bun Maska (₹30), Maggi (₹40), and Sandwiches (₹50).',
-    'price': 'Our chai prices start from ₹25. Masala, Ginger, and Elaichi Chai are ₹25, Kulhad Chai is ₹30, Chocolate Chai is ₹35, and Cold Tea is ₹30. Snacks range from ₹15 to ₹50.',
-    'pricing': 'Our chai prices start from ₹25. Masala, Ginger, and Elaichi Chai are ₹25, Kulhad Chai is ₹30, Chocolate Chai is ₹35, and Cold Tea is ₹30. Snacks range from ₹15 to ₹50.',
-    'hours': 'We are open Monday through Sunday from 7:00 AM to 10:00 PM.',
-    'timing': 'We are open Monday through Sunday from 7:00 AM to 10:00 PM.',
-    'open': 'We are open Monday through Sunday from 7:00 AM to 10:00 PM.',
-    'location': 'We are located in North India. You can find us on Google Maps or contact us at +91 8736477462 for directions.',
-    'address': 'We are located in North India. You can find us on Google Maps or contact us at +91 8736477462 for directions.',
-    'contact': 'You can reach us at +91 8736477462 or email us at info@chaiaffairs.com. You can also chat with us on WhatsApp!',
-    'phone': 'You can call us at +91 8736477462 or reach us on WhatsApp.',
-    'whatsapp': 'You can contact us on WhatsApp at +91 8736477462. Just click the WhatsApp button on our website!',
-    'special': 'We have daily specials! Follow us on social media or contact us on WhatsApp to know about today\'s special chai and snacks.',
-    'snacks': 'We serve Biscuits (₹15), Bun Maska (₹30), Maggi (₹40), and Sandwiches (₹50). Perfect companions for your chai!',
-    'hello': 'Hello! Welcome to Chai Affairs! How can I help you today?',
-    'hi': 'Hi there! Welcome to Chai Affairs! How can I assist you?',
-    'help': 'I can help you with information about our menu, flavours, pricing, delivery, opening hours, and location. What would you like to know?'
+    flavour: 'We brew Masala, Kulhad, Ginger, Elaichi, Chocolate, Cold Tea and Iced Tea daily. Specials rotate weekly!',
+    flavor: 'We brew Masala, Kulhad, Ginger, Elaichi, Chocolate, Cold Tea and Iced Tea daily. Specials rotate weekly!',
+    deliver: 'Yes! WhatsApp +91 87364 77462 for delivery or takeaway. We send ready-for-pickup alerts automatically.',
+    delivery: 'Yes! WhatsApp +91 87364 77462 for delivery or takeaway. We send ready-for-pickup alerts automatically.',
+    menu: 'Menu highlights: Masala/Kulhad/Ginger/Elaichi (\u20B9125), Chocolate (\u20B9135), Cold/Iced Tea (\u20B9130), Snacks \u20B9115-150.',
+    price: 'Menu highlights: Masala/Kulhad/Ginger/Elaichi (\u20B9125), Chocolate (\u20B9135), Cold/Iced Tea (\u20B9130), Snacks \u20B9115-150.',
+    timing: 'We are open every day from 7:00 AM to 10:00 PM.',
+    hours: 'We are open every day from 7:00 AM to 10:00 PM.',
+    open: 'We are open every day from 7:00 AM to 10:00 PM.',
+    location: 'Find us in North India. Tap the Google Maps link in the Contact section for directions.',
+    address: 'Find us in North India. Tap the Google Maps link in the Contact section for directions.',
+    contact: 'You can WhatsApp/call +91 87364 77462 or email info@chaiaffairs.com. We reply fast!',
+    whatsapp: 'Message us at https://wa.me/918736477462 for daily specials or takeaway orders.',
+    special: 'We drop daily specials each morning on WhatsApp. Ask to be added to the list!',
+    snack: 'Snacks include biscuits, bun maska, Maggi bowls, and toasted sandwiches (\u20B9115-150).',
+    feedback: 'Our AI feedback flow sends you a quick form and summarises reviews for the team.',
+    inventory: 'Inventory and sales dashboards let us prep for peak hours and kulhad restocks. No more stock-outs!'
 };
 
-// Function to get chatbot response
-function getChatbotResponse(userMessage) {
-    const message = userMessage.toLowerCase();
-    
-    // Check for keywords
-    for (const [keyword, response] of Object.entries(chatbotResponses)) {
-        if (message.includes(keyword)) {
-            return response;
-        }
-    }
-    
-    // Default response
-    return 'Thank you for your message! For more specific information, please call us at +91 8736477462 or message us on WhatsApp. We\'d be happy to help!';
-}
-
-// Function to add message to chat
 function addMessage(text, isUser = false) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `chatbot-message ${isUser ? 'user-message' : 'bot-message'}`;
-    messageDiv.innerHTML = `<p>${text}</p>`;
-    chatbotMessages.appendChild(messageDiv);
+    const wrapper = document.createElement('div');
+    wrapper.className = `chatbot-message ${isUser ? 'user-message' : 'bot-message'}`;
+    wrapper.innerHTML = `<p>${text}</p>`;
+    chatbotMessages?.appendChild(wrapper);
     chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 }
 
-// Toggle chatbot window
-if (chatbotToggle && chatbotWindow) {
-    chatbotToggle.addEventListener('click', () => {
-        chatbotWindow.classList.toggle('active');
-    });
+function getResponse(message) {
+    const lower = message.toLowerCase();
+    for (const [keyword, reply] of Object.entries(chatbotResponses)) {
+        if (lower.includes(keyword)) {
+            return reply;
+        }
+    }
+    return 'Thanks for reaching out! Ask about flavours, pricing, delivery, automation, or timings and I will help.';
 }
 
-if (chatbotClose) {
-    chatbotClose.addEventListener('click', () => {
-        chatbotWindow.classList.remove('active');
-    });
-}
-
-// Send message function
 function sendMessage() {
+    if (!chatbotInput) return;
     const message = chatbotInput.value.trim();
-    if (message) {
-        addMessage(message, true);
-        chatbotInput.value = '';
-        
-        // Simulate bot thinking
-        setTimeout(() => {
-            const response = getChatbotResponse(message);
-            addMessage(response, false);
-        }, 500);
+    if (!message) return;
+
+    addMessage(message, true);
+    chatbotInput.value = '';
+
+    setTimeout(() => {
+        addMessage(getResponse(message));
+    }, 450);
+}
+
+chatbotToggle?.addEventListener('click', () => chatbotWindow?.classList.toggle('active'));
+chatbotClose?.addEventListener('click', () => chatbotWindow?.classList.remove('active'));
+chatbotSend?.addEventListener('click', sendMessage);
+chatbotInput?.addEventListener('keypress', event => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        sendMessage();
     }
-}
-
-// Send message on button click
-if (chatbotSend) {
-    chatbotSend.addEventListener('click', sendMessage);
-}
-
-// Send message on Enter key
-if (chatbotInput) {
-    chatbotInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
-}
-
-// Navbar scroll effect
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll <= 0) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.15)';
-    }
-    
-    lastScroll = currentScroll;
 });
-
-// Add animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe menu items, gallery items, and review cards
-document.querySelectorAll('.menu-item, .gallery-item, .review-card, .feature-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
-// FAQ accordion
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const item = question.closest('.faq-item');
-        const expanded = question.getAttribute('aria-expanded') === 'true';
-
-        // close all items
-        document.querySelectorAll('.faq-item').forEach(faqItem => {
-            if (faqItem !== item) {
-                faqItem.classList.remove('active');
-                const btn = faqItem.querySelector('.faq-question');
-                if (btn) {
-                    btn.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-
-        item.classList.toggle('active', !expanded);
-        question.setAttribute('aria-expanded', String(!expanded));
-    });
-});
-
